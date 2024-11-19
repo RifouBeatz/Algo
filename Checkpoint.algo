@@ -1,0 +1,35 @@
+ALGORITHM analyse_phrase
+VAR
+    longueur ← 0
+    nombre_de_mots ← 0
+    nombre_de_voyelles ← 0
+    est_dans_un_mot ← Faux
+BEGIN
+    ecrire("Veuillez entrer une phrase se terminant par un point :")
+    Lire caractère
+    Tant que caractère ≠ '.' faire
+    longueur ← longueur + 1
+     Si caractère = 'a' ou caractère = 'e' ou caractère = 'i' ou caractère = 'o' ou caractère = 'u' ou 
+           caractère = 'A' ou caractère = 'E' ou caractère = 'I' ou caractère = 'O' ou caractère = 'U' Alors
+            nombre_de_voyelles ← nombre_de_voyelles + 1
+        Fin Si
+        Si caractère = ' ' Alors
+            Si est_dans_un_mot = Vrai Alors
+            nombre_de_mots ← nombre_de_mots + 1
+             est_dans_un_mot ← Faux 
+              Fin Si
+        Sinon 
+        est_dans_un_mot ← Vrai
+        Fin Si 
+         Lire caractère
+    Fin Tant que
+    Si est_dans_un_mot = Vrai Alors
+        nombre_de_mots ← nombre_de_mots + 1
+    Fin Si 
+    Ecrire("Longueur de la phrase : ", longueur)
+    Ecrire("Nombre de mots : ", nombre_de_mots)
+    Ecrire("Nombre de voyelles : ", nombre_de_voyelles)
+
+
+
+END
